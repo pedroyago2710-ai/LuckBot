@@ -3,6 +3,16 @@ from discord.ext import commands
 import json
 import os
 import qrcode
+from pymongo import MongoClient
+import os
+
+MONGO_URL = os.getenv("MONGO_URL")
+
+client = MongoClient(MONGO_URL)
+db = client["discord_bot"]
+
+filas_db = db["filas"]
+pix_db = db["pix"]
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
