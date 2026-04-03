@@ -1,2 +1,3 @@
 discord.py
 qrcode[pill]
+pymongo
